@@ -1,0 +1,11 @@
+numpy==2.1.1
+openai==1.50.0
+pi==0.1.2
+pillow==10.4.0
+python-dotenv==1.0.1
+regex==2024.9.11
+safetensors==0.4.5
+tokenizers==0.19.1
+torch==2.4.1
+
+reflex==0.6.0
