@@ -1,69 +1,48 @@
-# Welcome to Reflex!
+# 🎨 ArtExc - Transforma Texto en Arte Visual ✨
 
-This is the base Reflex template - installed when you run `reflex init`.
+**ArtExc** es una aplicación que convierte tus frases inspiradoras en **impactantes imágenes visuales**. Perfecta para quienes buscan crear contenido visual llamativo de manera sencilla. ¡Descubre lo que puede hacer! 🚀
 
-If you want to use a different template, pass the `--template` flag to `reflex init`.
-For example, if you want a more basic starting point, you can run:
+## 🚀 Funcionalidades
 
-```bash
-reflex init --template blank
-```
+- **📜 Procesamiento de artículos**: Ingresa un texto y la app extrae automáticamente las **frases más inspiradoras** utilizando inteligencia artificial (OpenAI GPT).
+  
+- **🎨 Generación de imágenes personalizadas**: Cada frase clave se convierte en una imagen única con fondos seleccionados y texto personalizado.
 
-## About this Template
+- **🔄 Cambia fondos**: Actualiza las imágenes generadas cambiando aleatoriamente las plantillas de fondo disponibles.
 
-This template has the following directory structure:
+- **📂 Galería interactiva**: Administra tu propia galería de imágenes con la opción de cargar, recortar y ajustar las imágenes según tus necesidades.
 
-```bash
-├── README.md
-├── assets
-├── rxconfig.py
-└── {your_app}
-    ├── __init__.py
-    ├── components
-    │   ├── __init__.py
-    │   └── sidebar.py
-    ├── pages
-    │   ├── __init__.py
-    │   ├── dashboard.py
-    │   ├── index.py
-    │   └── settings.py
-    ├── styles.py
-    ├── templates
-    │   ├── __init__.py
-    │   └── template.py
-    └── {your_app}.py
-```
+- **💡 Personalización**: Elige diferentes fuentes y estilos para tus imágenes, ajustando detalles visuales como el brillo y la rotación de la imagen.
 
-See the [Project Structure docs](https://reflex.dev/docs/getting-started/project-structure/) for more information on general Reflex project structure.
+## 🛠️ Tecnologías Utilizadas
 
-### Adding Pages
+- **Python**: El motor detrás de la lógica de la aplicación.
+- **Reflex**: Framework para manejar los estados y la interfaz.
+- **OpenAI API**: Generación de frases inspiradoras mediante IA.
+- **PIL (Pillow)**: Manipulación avanzada de imágenes.
 
-In this template, the pages in your app are defined in `{your_app}/pages/`.
-Each page is a function that returns a Reflex component.
-For example, to edit this page you can modify `{your_app}/pages/index.py`.
-See the [pages docs](https://reflex.dev/docs/pages/routes/) for more information on pages.
+## 💻 Cómo Empezar
 
-In this template, instead of using `rx.add_page` or the `@rx.page` decorator,
-we use the `@template` decorator from `{your_app}/templates/template.py`.
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/ArtExc.git
 
-To add a new page:
+2. Instala las dependencias necesarias:
+   ```bash
+   pip install -r requirements.txt
 
-1. Add a new file in `{your_app}/pages/`. We recommend using one file per page, but you can also group pages in a single file.
-2. Add a new function with the `@template` decorator, which takes the same arguments as `@rx.page`.
-3. Import the page in your `{your_app}/pages/__init__.py` file and it will automatically be added to the app.
+3. Configura tu archivo `.env` con tu clave de API de OpenAI.
+
+4. ¡Ejecuta la aplicación y comienza a generar imágenes impresionantes!
+
+## 🖼️ Ejemplo de Uso
+
+- Escribe o sube un artículo.
+- La aplicación extraerá las 4 frases más inspiradoras.
+- Cada frase se convierte en una imagen con un fondo visualmente atractivo y texto personalizado.
+
+¡Esperamos que disfrutes usando ArtExc para darle vida a tus palabras! 🌟
 
 
-### Adding Components
 
-In order to keep your code organized, we recommend putting components that are
-used across multiple pages in the `{your_app}/components/` directory.
 
-In this template, we have a sidebar component in `{your_app}/components/sidebar.py`.
-
-### Adding State
-
-As your app grows, we recommend using [substates](https://reflex.dev/docs/substates/overview/)
-to organize your state.
-
-You can either define substates in their own files, or if the state is
-specific to a page, you can define it in the page file itself.
