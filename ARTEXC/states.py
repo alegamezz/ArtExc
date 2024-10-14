@@ -232,25 +232,20 @@ def generate_image_with_text(phrase, index, selected_font, selected_images):
 
         # Tamaño del texto principal basado en un porcentaje del ancho de la imagen
         font_size = int(img_width * 0.05)  # El tamaño de la fuente es el 5% del ancho de la imagen
-        font_path = os.path.join(BASE_DIR, 'assets', 'fonts', 'SimpleCake.ttf')
+        font_path = os.path.join(BASE_DIR, 'uploaded_files', 'Montserrat-Bold.ttf')
         print("DIRECTORIO BASE:", BASE_DIR)
         print("Ruta de la fuente:", font_path)
         if not os.path.exists(font_path):
             print(f"Font file not found: {font_path}")
             font= ImageFont.load_default(font_size)
         else:
-            font = ImageFont.truetype(font_path, font_size)
+            font = ImageFont.truetype(font_path, font_size) 
 
-        font2_path = ("/fonts/Montserrat-Bold.ttf")
-        if not os.path.exists(font2_path):
-            print(f"Font file /fonts/Montserrat directly not found: {font2_path}")
-            font2 = ImageFont.load_default()
-        else:
-            font2 = ImageFont.truetype(font2_path, font_size)
+
         
         # Tamaño del texto "Sonia Blasco" más pequeño
         italic_font_size = int(font_size * 0.6)  # El tamaño es el 60% del tamaño del texto principal
-        italic_font_path = os.path.join(BASE_DIR, 'assets', 'fonts', 'Montserrat-Italic.ttf')
+        italic_font_path = os.path.join(BASE_DIR, 'uploaded_files', 'OpenSans-Italic.ttf')
         if not os.path.exists(italic_font_path):
             print(f"Font file not found: {italic_font_path}")
             italic_font = ImageFont.load_default(italic_font_size)
@@ -317,7 +312,7 @@ def generate_image_with_text(phrase, index, selected_font, selected_images):
         author_text_bbox = text_draw.textbbox((0, 0), author_text, font=italic_font)
         author_text_width = author_text_bbox[2] - author_text_bbox[0]
         author_x = (img_width - author_text_width) / 2
-        author_y = text_y + 20  # Ajustar según sea necesario
+        author_y = text_y + 30  # Ajustar según sea necesario
 
         # Dibujar el texto "Sonia Blasco"
         text_draw.text((author_x, author_y), author_text, font=italic_font, fill=text_color)
